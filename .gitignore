@@ -1,0 +1,13 @@
+node_modules/
+build/
+.env
+.DS_Store
+*.log
+swiftora.db
+*.db-journal
+coverage/
+.nyc_output/
+dist/
+.cache/
+
+.vercel

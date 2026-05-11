@@ -1,0 +1,8 @@
+{
+  "name": "swiftora-logistics",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "cd frontend && npm install"
+  }
+}
