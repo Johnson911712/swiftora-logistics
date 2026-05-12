@@ -1,5 +1,6 @@
-﻿import React from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "./context/ThemeContext";
 import Home from "./pages/Home";
 import Tracking from "./pages/Tracking";
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
         </Routes>
       </Router>
+      <Analytics />
     </ThemeProvider>
   );
 }
