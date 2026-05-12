@@ -16,7 +16,7 @@ function verifyToken(req) {
   }
 }
 
-// PUT /api/shipments/[id]/status - Update shipment status
+// PUT /api/shipments/[id] - Update shipment status
 export async function PUT(req, res) {
   const user = verifyToken(req);
   if (!user) {

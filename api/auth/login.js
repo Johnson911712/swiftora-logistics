@@ -4,11 +4,7 @@ import jwt from 'jsonwebtoken';
 
 const sql = neon(process.env.DATABASE_URL);
 
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
-
+export async function POST(req, res) {
   const { username, password } = req.body;
 
   try {
