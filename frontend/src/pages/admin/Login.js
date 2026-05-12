@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Truck, Eye, EyeOff, Lock, Mail } from "lucide-react";
 
@@ -50,17 +50,36 @@ export default function AdminLogin() {
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Username / Email</label>
               <div className="relative">
                 <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
-                <input type="text" required value={form.username} onChange={(e) => setForm({ ...form, username: e.target.value })}
-                  placeholder="Admin@swiftoralogistics.online" className="input-field pl-10" />
+                <input 
+                  type="text" 
+                  required 
+                  value={form.username} 
+                  onChange={(e) => setForm({ ...form, username: e.target.value })}
+                  placeholder="Admin@swiftoralogistics.online" 
+                  className="input-field pl-10"
+                  autoComplete="username"
+                />
               </div>
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Password</label>
               <div className="relative">
                 <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
-                <input type={showPassword ? "text" : "password"} required value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })}
-                  placeholder="Enter password" className="input-field pl-10 pr-10" />
-                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors">
+                <input 
+                  type={showPassword ? "text" : "password"} 
+                  required 
+                  value={form.password} 
+                  onChange={(e) => setForm({ ...form, password: e.target.value })}
+                  placeholder="Enter password" 
+                  className="input-field pl-10 pr-10"
+                  autoComplete="current-password"
+                />
+                <button 
+                  type="button" 
+                  onClick={() => setShowPassword(!showPassword)} 
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                >
                   {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
